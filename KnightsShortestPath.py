@@ -14,7 +14,7 @@ def knightsShortest(entry,exit):
         [2,3,2,3,4],
         [3,2,3,2],
         [2,1,4],
-        [3,2],
+        [3,4],
         [0]
         #Based off of how we entered the data, we start from the last index in Main and move backwards.
     ]
