@@ -27,8 +27,8 @@ def knightsShortest(entry,exit):
     dist = [d1, d2]
     #Finds the absolute value of x distance and the y distance between two points.
     if(d1 > d2):
-        for i in testBy:
-            if entry=testBy[i]:
+        for i in range(0,len(testBy)):
+            if entry==testBy[i]:
                 Main[6][1]=4     
             #If the entry spot is an edge piece, the moves to reach the spot directly diagonal to it goes from 2 to 4.
         temp=Main[len(Main)-d1][d2-1]
@@ -36,10 +36,10 @@ def knightsShortest(entry,exit):
         print "Position {} is {} moves away from position {}".format(str(entry), str(temp), str(exit))
 
     else:
-        for i in testBy:
-            if entry=testBy[i]:
+        for x in range(0,len(testBy)):
+            if entry==testBy[x]:
                 Main[6][1]=4
-            #If the entry spot is an edge piece, the moves to reach the spot directly diagonal to it goes from 2 to 4.
+             #If the entry spot is an edge piece, the moves to reach the spot directly diagonal to it goes from 2 to 4.
         temp=Main[len(Main)-d2][d1-1]
         #Sets a variable of the longer of the (X,Y) of distance and finds the index of the opposite axis in the index of the array
         print "Position {} is {} moves away from position {}".format(str(entry), str(temp), str(exit))
