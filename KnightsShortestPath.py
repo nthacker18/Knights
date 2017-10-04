@@ -29,7 +29,7 @@ def pos(thing):
     return arr
 
     
-def knightsShortest(entry,exit):
+def knightsShortest(entry,target):
     Main=[
         #This is a BFS plot of a starting point up til the very corners of the chess board that holds the moves needed.
         [0],
@@ -60,41 +60,41 @@ def knightsShortest(entry,exit):
 
     """
     p1 = pos(entry)
-    p2 = pos(exit)
+    p2 = pos(target)
     dX = abs(p1[0] - p2[0])
     dY = abs(p1[1] - p2[1])
     dist = [dX, dY]
    
-   """ 
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    """ 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                         LOGIC
-   There are 3 steps within our logic:
-   1) Is one of the squares on a border and is the move a single diagonal move?
+    There are 3 steps within our logic:
+    1) Is one of the squares on a border and is the move a single diagonal move?
         -If so, the minimum number of moves is 4. We know this from playing with the
         chessboard in the lobby.
 
-   2) Is X-distance greater than the Y-distance?
+    2) Is X-distance greater than the Y-distance?
         -if so, we need to make sure we use the x-distance to traverse "vertically" on
         our plot and use the y-distance to traverse "horizontally". While it seems
         confusing from a traditional matematics standpoint, the plot is shaped as a 
         cone of sorts so we need the loger distance to traverse the longer side of the
         cone.
 
-   3) Otherwise the Y-distance is greater than or equal to the X-distance, meaning we
+    3) Otherwise the Y-distance is greater than or equal to the X-distance, meaning we
       do not need to invert the x and y axis.
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   """
+    """
     if (p1[2] or p2[2]) and (dist == [1,1]):
-        print "Position {} is 4 moves away from position {}".format(str(entry), str(exit))
+        print "Position {} is 4 moves away from position {}".format(str(entry), str(target))
     
     elif(dX > dY):
         temp = Main[dX][dY]
-        print "Position {} is {} moves away from position {}".format(str(entry), str(temp), str(exit))
+        print "Position {} is {} moves away from position {}".format(str(entry), str(temp), str(target))
 
     else:
         temp=Main[dY][dX]
-        print "Position {} is {} moves away from position {}".format(str(entry), str(temp), str(exit))
+        print "Position {} is {} moves away from position {}".format(str(entry), str(temp), str(target))
 
     #in both the elif and else statements, temp just stores the value gained from the plot
 
