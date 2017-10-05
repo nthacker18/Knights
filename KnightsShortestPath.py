@@ -1,6 +1,6 @@
 """ knightsPath() solution
         -Bret Farley
-        -Nicolas Thacker
+        -Nicholas Thacker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This program is designed with the intention of finding the shortest path that a
 knight can take to get from one square on a chessboard to another. The function
